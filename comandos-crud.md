@@ -11,6 +11,8 @@ D: DELETE (DELETE) -> usado para Inserir dados
 
 ### INSERT  na tabela de usuarios
 
+
+```sql
 INSERT INTO usuarios (nome,email,senha,tipo)
 VALUES(
     'Joao pedro .C. silva',
@@ -18,7 +20,8 @@ VALUES(
     '!@#$%¨&*90',
     'admin'
     );
-
+```
+```sql
 INSERT INTO usuarios(nome,email,senha,tipo)
 VALUES(
 'Fulano da silva',
@@ -36,7 +39,8 @@ VALUES(
 'mareta',
 'editor'
 );
-
+```
+```sql
 ### SELECT na tebela de usuario
 
 SELECT * FROM usuarios;
@@ -44,7 +48,8 @@ SELECT * FROM usuarios;
 SELECT nome,email FROM usuarios;
 
 SELECT nome,email FROM usuarios WHERE tipo = 'adiimin';
-
+```
+```sql
 ### UPDATE  em dados da tebela de usuario
 
 UPDATE usuarios SET ='admin'
@@ -65,7 +70,8 @@ VALUES(
 1
 
 );
-
+```
+```sql
 INSERT INTO noticias(titulo ,resumo, texto, imagem, usuario_id)
 VALUES(
 'Nova versão do VSCode',
@@ -83,10 +89,10 @@ VALUES(
 'sol.png',
 1
 );
-
+```
 ### objetivo consulta q mostre a data e o titulo da noticia e o nome do autor desta noticia
 #### SELECT COM JOIN (CONSULTA COM JUNÇÃO DE TABELAS)
- 
+```sql 
 -- Especificamos o nome da coluna junto com o nome da tabela 
 SELECT 
 noticias.datas,
@@ -105,7 +111,7 @@ ON noticias.usuario_id = usuario.id
 --opicional (ordenação/classificaçao pela data)
 --DESC indica ordem decresencente (mais recenre vem primeiro)
 ORDER BY data DESC;
-
+```
 
 
 
