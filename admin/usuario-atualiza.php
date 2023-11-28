@@ -1,6 +1,7 @@
 <?php // usuario-atualiza.php
-require_once "../inc/funcoes-usuarios.php";
+require_once "../inc/funcoes-noticias.php";
 require_once "../inc/cabecalho-admin.php";
+
 
 // Verificando se o usuário pode entrar nesta página
 verificaTipo();

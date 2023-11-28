@@ -90,11 +90,26 @@ function formataData()
 
 
 /* Usada em noticia-atualiza.php */
-function lerUmaNoticia($conexao)
-{
+function lerUmaNoticia(
+    $conexao,
+    $idNoticia,
+    $idUsuario,
+    $tipoUsuario
+) {
 
 
-    // mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+    if ($tipoUsuario == "admin") {
+        $sql = "SELECT * FROM noticias WHERE id = $idNoticia";
+    } else {
+        $sql =  "SELECT * FROM noticias
+             WHERE id = $idNoticia
+             AND usuario_id = $idUsuario";
+    }
+
+
+   $resultado = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+
+return mysqli_fetch_assoc($resultado);
 
 } // fim lerUmaNoticia
 

@@ -1,5 +1,19 @@
 <?php
+require_once "../inc/funcoes-noticias.php";
 require_once "../inc/cabecalho-admin.php";
+$idNoticia = $_GET['id'];
+
+
+$idUsuario = $_SESSION['id'];
+$tipoUsuario = $_SESSION['tipo'];
+
+$noticia = lerUmaNoticia($conexao,$idNoticia,$idUsuario,$tipoUsuario);
+	
+	echo"<pre>";
+	var_dump($noticia);
+	echo"</pre>";
+
+
 ?>
 
 
