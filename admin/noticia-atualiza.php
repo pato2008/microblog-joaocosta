@@ -9,9 +9,28 @@ $tipoUsuario = $_SESSION['tipo'];
 
 $noticia = lerUmaNoticia($conexao,$idNoticia,$idUsuario,$tipoUsuario);
 	
-	echo"<pre>";
-	var_dump($noticia);
-	echo"</pre>";
+	if(isset($_POST['atualizar'])){
+        $titulo = $_POST['titulo'];
+        $texto = $_POST['texto'];
+        $resumo = $_POST['resumo'];
+    
+    
+if (empty($_FILES['imagem']['name'])) {
+$imagem = $_POST['imagem-existente'];
+
+} else {
+    $imagem = $_FILES['imagem']['name'];
+    upload($_FILES['imagem']);
+
+    }
+    atualizarNoticia($idUsuario,$conexao,$titulo,$texto,$resumo,$imagem,$idNoticia,$tipoUsuario);
+
+
+
+header("location:noticia.php");
+}
+
+
 
 
 ?>
